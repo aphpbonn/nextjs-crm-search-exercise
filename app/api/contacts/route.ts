@@ -7,7 +7,7 @@ export async function GET(request: Request) {
   const q = (url.searchParams.get("q") || "").trim().toLowerCase();
 
   // Simulate a small network delay so loading states are visible.
-  await delay(350);
+  await delay(Math.random() * 5000 + 100);
 
   const all = getAllContacts();
   const filtered = q
